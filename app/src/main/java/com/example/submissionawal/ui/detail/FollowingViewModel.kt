@@ -16,7 +16,7 @@ val listFollowing = MutableLiveData<ArrayList<User>>()
 
     fun setListFollowing(username :String){
         RetrofitClient.apiInstance
-            .getFollowers(username)
+            .getFollowing(username)
             .enqueue(object :Callback<ArrayList<User>>{
                 override fun onResponse(
                     call: Call<ArrayList<User>>,
@@ -33,7 +33,7 @@ val listFollowing = MutableLiveData<ArrayList<User>>()
 
             })
     }
-    fun getListFollowers():LiveData<ArrayList<User>>{
+    fun getListFollowing():LiveData<ArrayList<User>>{
         return listFollowing
     }
 }
