@@ -22,13 +22,13 @@ interface Api {
         @Path("username") username:String
     ):Call<DetailUserResponse>
 
-    @GET("users/{username}followers")
+    @GET("users/{username}/followers")
     @Headers("Authorization: token ")
     fun getFollowers(
         @Path("username") username: String
     ):Call<ArrayList<User>>
 
-    @GET("users/{username}following")
+    @GET("users/{username}/following")
     @Headers("Authorization: token ")
     fun getFollowing(
         @Path("username") username: String
