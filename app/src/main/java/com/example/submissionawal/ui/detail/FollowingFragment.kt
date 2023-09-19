@@ -36,7 +36,7 @@ class FollowingFragment:Fragment(R.layout.fragment_follow) {
         showLoading(true)
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowingViewModel::class.java)
         viewModel.setListFollowing(username)
-        viewModel.getListFollowers().observe(viewLifecycleOwner,{
+        viewModel.getListFollowing().observe(viewLifecycleOwner,{
             if (it!=null){
                 adapter.setList(it)
                 showLoading(false)
